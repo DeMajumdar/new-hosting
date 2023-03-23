@@ -96,6 +96,7 @@ const TransactionMaster = () => {
   //       item.Record.currentLocation.includes(filterParam)
   //   );
 
+  
   const handleSearchChange = (event) => {
     setFilterParam(event.target.value);
   };
