@@ -24,7 +24,6 @@
     "react-papaparse": "^4.1.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.1",
-    "react-vis-network": "^1.1.0",
     "react-vis-network-graph": "^3.0.1",
     "sheetjs-style": "^0.15.8",
     "uuid": "^9.0.0",
