@@ -1,37 +1,35 @@
-import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
-import SidebarMenu from "./SidebarMenu";
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { useMediaQuery } from '@material-ui/core';
+import SidebarMenu from './SidebarMenu';
 import {
   adminRoutes,
   manufacturerRoutes,
   distributorRoutes,
   retailerRoutes,
   storageRoutes,
-} from "../data/link";
-import { AuthContext } from "../contexts/auth-context";
-import { useMediaQuery } from "@material-ui/core";
+} from '../data/link';
+import { AuthContext } from '../contexts/auth-context';
 
 const Sidebar = () => {
   const { userRole } = useContext(AuthContext);
-  var routes = "";
-  if (userRole === "admin@gmail.com") {
+  let routes = '';
+  if (userRole === 'admin@gmail.com') {
     routes = adminRoutes;
-  } else if (userRole === "manufacturer@gmail.com") {
+  } else if (userRole === 'manufacturer@gmail.com') {
     routes = manufacturerRoutes;
-  } else if (userRole === "distributor@gmail.com") {
+  } else if (userRole === 'distributor@gmail.com') {
     routes = distributorRoutes;
-  } else if (userRole === "storage@gmail.com") {
+  } else if (userRole === 'storage@gmail.com') {
     routes = storageRoutes;
   } else {
     routes = retailerRoutes;
   }
 
-  const activeLink =
-    "grid items-center gap-1 p-2 rounded-lg text-black font-semibold text-md m-2 bg-active-bg";
-  const normalLink =
-    "grid items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 hover:text-[#7b8cb8] m-2";
+  const activeLink = 'grid items-center gap-1 p-2 rounded-lg text-black font-semibold text-md m-2 bg-active-bg';
+  const normalLink = 'grid items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 hover:text-[#7b8cb8] m-2';
 
-  const isSmallScreen = useMediaQuery("(max-width: 640px)");
+  const isSmallScreen = useMediaQuery('(max-width: 640px)');
 
   return (
     <>
@@ -40,7 +38,7 @@ const Sidebar = () => {
           <div className="flex justify-center items-center">
             <Link>
               <img
-                src={require("../data/image/logo-edited.png")}
+                src={require('../data/image/logo-edited.png')}
                 className="h-12"
               />
             </Link>
@@ -53,28 +51,24 @@ const Sidebar = () => {
                 }
 
                 return (
-                  <>
-                    <NavLink
-                      to={route.path}
-                      key={index}
-                      className={({ isActive }) =>
-                        isActive ? activeLink : normalLink
-                      }
+                  <NavLink
+                    to={route.path}
+                    key={index}
+                    className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                  >
+                    <div
+                      style={{
+                        fontSize: '1.5rem',
+                        display: 'flex',
+                        justifyContent: 'center',
+                      }}
                     >
-                      <div
-                        style={{
-                          fontSize: "1.5rem",
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        {route.icon}
-                      </div>
-                      <div className="capitalize flex justify-center text-xs">
-                        {route.name}
-                      </div>
-                    </NavLink>
-                  </>
+                      {route.icon}
+                    </div>
+                    <div className="capitalize flex justify-center text-xs">
+                      {route.name}
+                    </div>
+                  </NavLink>
                 );
               })}
             </div>
@@ -86,7 +80,7 @@ const Sidebar = () => {
           <div className="flex justify-center items-center py-2">
             <Link>
               <img
-                src={require("../data/image/logo-edited.png")}
+                src={require('../data/image/logo-edited.png')}
                 className="h-8"
               />
             </Link>
