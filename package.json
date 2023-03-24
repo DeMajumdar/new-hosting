@@ -36,8 +36,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-     "build": "babel src -d lib",
-     "test": "jest",
+    "build": "babel src -d lib",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -72,7 +72,6 @@
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.19"
   },
- 
   "browser": {
     "fs": false,
     "os": false,
