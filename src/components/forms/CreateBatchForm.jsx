@@ -1,29 +1,23 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { AiOutlineCloseCircle } from "react-icons/ai";
-import Button from "../UI/Button/Button";
-import { useStateContext } from "../../contexts/ContextProvider";
-import CreateBatch from "../../pages/CreateBatch";
-
-
-
+import React from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import { AiOutlineCloseCircle } from 'react-icons/ai';
+import Button from '../UI/Button/Button';
+// import { useStateContext } from '../../contexts/ContextProvider';
+// import CreateBatch from '../../pages/CreateBatch';
 
 const CreateBatchForm = () => {
-
-  const route = ["Manufacturer", "Storage-96", "Distributor-15", "Retailer-99"];
-  
+  const route = ['Manufacturer', 'Storage-96', 'Distributor-15', 'Retailer-99'];
+  console.log(route);
   // const handleClick = async() => {
   //   const jsondata = await CreateBatch(route);
   //   console.log(jsondata);
   // };
 
-  let navigate = useNavigate()
-  const handleClick = () => {
-      console.log(route);
-      navigate(`/newBatch?route=${route.toString()}`);
-  }
-
-
+  // const navigate = useNavigate();
+  // const handleClick = () => {
+  //   console.log(route);
+  //   navigate(`/newBatch?route=${route.toString()}`);
+  // };
 
   return (
     <>
@@ -37,8 +31,9 @@ const CreateBatchForm = () => {
           <option>2</option>
           <option>3</option>
         </select>
-        <Button className="bg-orange-500 h-12 hover:bg-orange-600 hover:border-orange-600 text-white font-bold capitalize px-3 py-2 text-base md:text-lg rounded-r-md border-t border-r border-b border-orange-500"
-        onClick={() => {}}
+        <Button
+          className="bg-orange-500 h-12 hover:bg-orange-600 hover:border-orange-600 text-white font-bold capitalize px-3 py-2 text-base md:text-lg rounded-r-md border-t border-r border-b border-orange-500"
+          onClick={() => {}}
         >
           Create
         </Button>

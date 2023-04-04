@@ -7,20 +7,19 @@ import {
   distributorRoutes,
   retailerRoutes,
   storageRoutes,
-} from "../data/link";
-import { AuthContext } from "../contexts/auth-context";
-import { useMediaQuery } from "@material-ui/core";
+} from '../data/link';
+import { AuthContext } from '../contexts/auth-context';
 
 const Sidebar = () => {
   const { userRole } = useContext(AuthContext);
-  var routes = "";
-  if (userRole === "admin@gmail.com") {
+  let routes = '';
+  if (userRole === 'admin@gmail.com') {
     routes = adminRoutes;
-  } else if (userRole === "manufacturer@gmail.com") {
+  } else if (userRole === 'manufacturer@gmail.com') {
     routes = manufacturerRoutes;
-  } else if (userRole === "distributor@gmail.com") {
+  } else if (userRole === 'distributor@gmail.com') {
     routes = distributorRoutes;
-  } else if (userRole === "storage@gmail.com") {
+  } else if (userRole === 'storage@gmail.com') {
     routes = storageRoutes;
   } else {
     routes = retailerRoutes;
@@ -47,7 +46,7 @@ const Sidebar = () => {
           <div className="flex justify-center items-center">
             <Link>
               <img
-                src={require("../data/image/logo-edited.png")}
+                src={require('../data/image/logo-edited.png')}
                 className="h-12"
               />
             </Link>
@@ -100,7 +99,7 @@ const Sidebar = () => {
           <div className="flex justify-center items-center py-2">
             <Link>
               <img
-                src={require("../data/image/logo-edited.png")}
+                src={require('../data/image/logo-edited.png')}
                 className="h-8"
                 onClick={openModal}
               />

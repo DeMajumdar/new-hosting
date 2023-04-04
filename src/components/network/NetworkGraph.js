@@ -115,16 +115,48 @@ const NetworkGraph = () => {
     { from: 15, to: 30 },
     { from: 15, to: 31 },
   ]);
+  const [isEditPopupOpen, setEditPopupOpen] = useState(false);
   const [isAddNodePopupOpen, setIsAddNodePopupOpen] = useState(false);
+  const [isAddEdgePopupOpen, setIsAddEdgePopupOpen] = useState(false);
   const [newNodeId, setNewNodeId] = useState("");
   const [newNodeName, setNewNodeName] = useState("");
   const [newNodeGroup, setNewNodeGroup] = useState("");
   const [newNodeX, setNewNodeX] = useState(0);
   const [newNodeY, setNewNodeY] = useState(0);
+  const [newEdgeFrom, setNewEdgeFrom] = useState(0);
+  const [newEdgeTo, setNewEdgeTo] = useState(0);
   const [instruction, setInstruction] = useState("");
   const [showInstruction, setShowInstruction] = useState(false);
   const [hoveredNode, setHoveredNode] = useState(null);
+  const network = useRef(null);
   const networkContainerRef = useRef(null);
+
+  const options = {
+    autoResize: true,
+    height: "100%",
+    width: "100%",
+    clickToUse: false,
+    nodes: {
+      shape: "box",
+      color: "#2B7CE9",
+      font: {
+        color: "#ffffff",
+      },
+    },
+    edges: {
+      arrows: {
+        to: {
+          enabled: true,
+        },
+      },
+      color: {
+        color: "#848484",
+        highlight: "#848484",
+        hover: "#848484",
+      },
+      width: 2,
+    },
+  };
 
   const addNode = () => {
     const newNode = {
@@ -138,10 +170,30 @@ const NetworkGraph = () => {
     setIsAddNodePopupOpen(false);
   };
 
-  console.log("Nodes: " + JSON.stringify(nodes))
+  const addEdge = () => {
+    console.log("Inside add edge");
+    const newEdge = {
+      from: newEdgeFrom,
+      to: newEdgeTo,
+    };
+    setEdges([...edges, newEdge]);
+    setIsAddEdgePopupOpen(false);
+  };
 
-  const handleClosePopup = () => {
+  const handleOpenEditPopup = () => {
+    setEditPopupOpen(true);
+  };
+
+  const handleCancelEditPopup = () => {
+    setEditPopupOpen(false);
+  };
+
+  const handleAddNodeClosePopup = () => {
     setIsAddNodePopupOpen(false);
+  };
+
+  const handleAddEdgeClosePopup = () => {
+    setIsAddEdgePopupOpen(false);
   };
 
   const handleOpenAddNodePopup = (event) => {
@@ -152,6 +204,10 @@ const NetworkGraph = () => {
     setNewNodeX(x);
     setNewNodeY(y);
     setIsAddNodePopupOpen(true);
+  };
+
+  const handleOpenAddEdgePopup = (event) => {
+    setIsAddEdgePopupOpen(true);
   };
 
   const handleNodeIdChange = (e) => {
@@ -174,50 +230,82 @@ const NetworkGraph = () => {
     setNewNodeY(parseInt(e.target.value));
   };
 
+  const handleEdgeFromChange = (e) => {
+    setNewEdgeFrom(e.target.value);
+  };
+
+  const handleEdgeToChange = (e) => {
+    setNewEdgeTo(e.target.value);
+  };
+
   const handleHoverNode = (event) => {
     const nodeId = event.node;
     setHoveredNode(nodes.find((node) => node.id === nodeId));
-    console.log("Hover In")
+    console.log("Hover In");
   };
 
   const handleLeaveNode = () => {
     setHoveredNode(null);
-    console.log("Hover Out")
+    console.log("Hover Out");
   };
 
   useEffect(() => {
     const networkContainer = networkContainerRef.current;
     if (!networkContainer) return;
-
-    const network = new Network(networkContainer, { nodes, edges }, {});
-
+    const network = new Network(networkContainer, { nodes, edges }, options);
     const handleAddNode = (event) => {
       if (isAddNodePopupOpen) return;
-
       handleOpenAddNodePopup(event);
     };
 
+    // const handleAddEdge = (event) => {
+    //   if (isAddEdgePopupOpen) return;
+    //   handleOpenAddEdgePopup(event);
+    // };
+
     network.on("click", handleAddNode);
+    // network.on("click", handleAddEdge)
     network.on("hoverNode", handleHoverNode);
     network.on("blurNode", handleLeaveNode);
 
     return () => {
       network.off("click", handleAddNode);
+      // network.off("click", handleAddEdge);
       network.off("hoverNode", handleHoverNode);
       network.destroy();
     };
-  }, [nodes, edges, isAddNodePopupOpen]);
+  }, [nodes, edges, isAddNodePopupOpen, isAddEdgePopupOpen]);
+
+  // const fitNetwork = () => {
+  //   network.current.fit();
+  // };
 
   return (
     <div>
-      <Button onClick={handleOpenAddNodePopup}>Add Node</Button>
+      {/* <Button onClick={fitNetwork}>Fit Network</Button> */}
+      {!isEditPopupOpen && <Button onClick={handleOpenEditPopup}>Edit</Button>}
+      {isEditPopupOpen && (
+        <div>
+          <Button onClick={handleOpenAddNodePopup}>Add Node</Button>
+          <Button onClick={handleOpenAddEdgePopup}>Add Edge</Button>
+          <Button onClick={handleCancelEditPopup}>Cancel</Button>
+        </div>
+      )}
       {showInstruction && (
         <div className=" text-red-600 text-lg">{instruction}</div>
       )}
       <div style={{ height: "500px" }} ref={networkContainerRef} />
+
       {isAddNodePopupOpen && (
         <div className="bg-white shadow-lg rounded-lg w-1/2 fixed top-[20%] left-[25%] z-[5]">
-          <h1 className="m-2 p-1 font-semibold text-xl">Fill Node Details</h1>
+          <div className="flex justify-between">
+            <span className="m-2 p-1 font-semibold text-xl">
+              Fill Node Details
+            </span>
+            <button className="mr-2" onClick={handleAddNodeClosePopup}>
+              Close
+            </button>
+          </div>
           <div className=" inline-block">
             <div>
               <input
@@ -262,10 +350,62 @@ const NetworkGraph = () => {
           </div>
           <div className="m-2 p-1">
             <Button onClick={addNode}>Add Node</Button>
-            <Button onClick={handleClosePopup}>Cancel</Button>
+            <Button onClick={handleAddNodeClosePopup}>Cancel</Button>
           </div>
         </div>
       )}
+
+      {isAddEdgePopupOpen && (
+        <div className="bg-white shadow-lg rounded-lg w-1/2 fixed top-[20%] left-[25%] z-[5]">
+          <div className="flex justify-between">
+            <span className="m-2 p-1 font-semibold text-xl">
+              Fill Edge Details
+            </span>
+            <button className="mr-2" onClick={handleAddNodeClosePopup}>
+              Close
+            </button>
+          </div>
+          <div className=" inline-block">
+            <div>
+              <input
+                type="text"
+                value={newEdgeFrom}
+                onChange={handleEdgeFromChange}
+                placeholder="Node ID"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                value={newEdgeTo}
+                onChange={handleEdgeToChange}
+                placeholder="Node Name"
+              />
+            </div>
+            {/* <div>
+              <label>Node X Position:</label>
+              <input
+                type="number"
+                value={newNodeX}
+                onChange={handleNodeXChange}
+              />
+            </div> */}
+            {/* <div>
+              <label>Node Y Position:</label>
+              <input
+                type="number"
+                value={newNodeY}
+                onChange={handleNodeYChange}
+              />
+            </div> */}
+          </div>
+          <div className="m-2 p-1">
+            <Button onClick={addEdge}>Add Edge</Button>
+            <Button onClick={handleAddEdgeClosePopup}>Cancel</Button>
+          </div>
+        </div>
+      )}
+
       {hoveredNode && (
         <div className="absolute bg-white shadow-lg rounded-lg p-1 z-[5]">
           <div>
