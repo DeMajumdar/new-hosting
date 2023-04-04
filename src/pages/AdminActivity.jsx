@@ -37,16 +37,16 @@ const AdminActivity = () => {
   <>
     <div>
       <div>
-          <div className="container">
+          <div className="admin_container">
             {cardList.map((item, index) => (
               <div>
-                <NavLink className="card" key={index} to={item.path}>
-                  <div className="content">
-                    <div className="imgBx">
+                <NavLink className="admin_card" key={index} to={item.path}>
+                  <div className="admin_content">
+                    <div className="admin_imgBx">
                     <img src={item.icon}></img>
                     </div> 
                   </div> 
-                  <div className="sci">
+                  <div className="admin_sci">
                     <p>
                         <h1>{item.name}</h1>
                     </p>

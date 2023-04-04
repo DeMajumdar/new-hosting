@@ -41,6 +41,7 @@
   padding: 0.35rem 0.35rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  width: 100%;
 }
 
 .control input:focus {

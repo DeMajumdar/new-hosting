@@ -132,7 +132,7 @@ const Popupform = () => {
         <FileExport data={displayedData} onCloseRecieved={closePopup} />
       )}
       <div className="m-2 rounded-lg">
-        <div className="bg-white mt-3 flex justify-between ">
+        <div className="bg-white mt-3 flex flex-wrap justify-between">
           <div>
             <input
               placeholder="Search"
@@ -163,7 +163,7 @@ const Popupform = () => {
             </button> */}
           </div>
         </div>
-        <div className="overflow-hidden bg-white shadow-md">
+        <div className="overflow-x-scroll bg-white shadow-md">
           <table className=" min-h-[70vh] w-full border-collapse text-left text-sm text-gray-500">
             <thead className="bg-gray-50">
               <tr>

@@ -35,7 +35,7 @@ const HomeAdmin = () => {
       <Route path="/" element={<Dashboard />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/network" element={<Network />} />
-      <Route path="/masterData" element={<MasterData />} />
+      {/* <Route path="/masterData" element={<MasterData />} /> */}
       <Route path="/adminActivity" element={<AdminActivity />} />
       <Route path="/registerUser" element={<Registeruser />} />
       {/* DASHBOARD SECTION ENDS */}

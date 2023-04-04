@@ -34,7 +34,7 @@ section::after {
 	clip-path: circle(20% at 10% 10%);
 } */
 
-.container {
+.admin_container {
 	position: relative;
 	top:15%;
 	z-index: 1;
@@ -43,6 +43,36 @@ section::after {
 	align-items: center;
 	flex-wrap: wrap;
 	margin:40px;
+}
+
+@media screen and (min-width:400px) and (max-width:767px) {
+
+	.admin_container {
+		position: relative;
+		top:15%;
+		z-index: 1;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-wrap: wrap;
+		margin:40px;
+	}
+	
+}
+
+@media screen and (min-width:320px) and (max-width:380px) {
+
+	.admin_container {
+		position: relative;
+		top:15%;
+		z-index: 1;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-wrap: wrap;
+		margin:40px;
+	}
+	
 }
 
 /* .Manufacturer_container {
@@ -56,7 +86,7 @@ section::after {
 	margin:40px;
 } */
 
-.container .card {
+.admin_container .admin_card {
 	position: relative;
 	width: 250px;
 	height: 250px;
@@ -70,7 +100,7 @@ section::after {
 	backdrop-filter: blur(10px);
 }
 
-.container .card .content {
+.admin_container .admin_card .admin_content {
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -79,18 +109,18 @@ section::after {
 	transition: 0.5s;
 }
 
-.container .card:hover .content {
+.admin_container .admin_card:hover .admin_content {
 	transform: translateY(-20px);
 }
 
-.container .card .content .imgBx {
+.admin_container .admin_card .admin_content .admin_imgBx {
 	position: relative;
 	width: 120px;
 	height: 120px;
 	overflow: hidden;
 }
 
-.container .card .content .imgBx img {
+.admin_container .admin_card .admin_content .admin_imgBx img {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -99,7 +129,7 @@ section::after {
 	object-fit: cover;
 }
 
-.container .card .content .contentBx h3 {
+.admin_container .admin_card .admin_content .admin_contentBx h3 {
 	color: rgb(0, 0, 0);
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -110,20 +140,20 @@ section::after {
 	line-height: 1.1em;
 }
 
-.container .card .content .contentBx h3 span {
+.admin_container .admin_card .admin_content .admin_contentBx h3 span {
 	font-size: 12px;
 	font-weight: 300;
 	text-transform: initial;
 }
 
-.container .card .sci {
+.admin_container .admin_card .admin_sci {
 	position: absolute;
 	bottom: 50px;
 	display: flex;
 	font-size:large
 }
 
-.container .card .sci p {
+.admin_container .admin_card .admin_sci p {
 	list-style: none;
 	margin: 0 10px;
 	transform: translateY(40px);
@@ -131,13 +161,13 @@ section::after {
 	opacity: 0;
 }
 
-.container .card:hover .sci p {
+.admin_container .admin_card:hover .admin_sci p {
 	transform: translateY(0px);
 	opacity: 1;
 	color: #2e86ab;
 }
 
-.container .card .sci p h1 {
+.admin_container .admin_card .admin_sci p h1 {
 	color: rgb(0, 0, 0);
 	font-size: 20px;
 }

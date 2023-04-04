@@ -84,7 +84,7 @@ export const adminRoutes = [
     path: "/masterData",
     name: "masterData",
     icon: <FiDatabase />,
-    exact: true,
+    // exact: true,
     subRoutes: [
       {
         path: "/masterData/products",

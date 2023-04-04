@@ -32,18 +32,18 @@ const WarehouseActivity = () => {
   return (
     <>
       <div>
-        <Header category="Page" title="Storage Activity | Batch History" />
+        {/* <Header category="Page" title="Storage Activity | Batch History" /> */}
         <div>
-          <div className="container">
+          <div className="user_common_container">
             {cardList.map((item, index) => (
               <div>
-                <NavLink className="card" key={index} to={item.path}>
-                  <div className="content">
-                    <div className="imgBx">
+                <NavLink className="user_common_card" key={index} to={item.path}>
+                  <div className="user_common_content">
+                    <div className="user_common_imgBx">
                       <img src={item.icon}></img>
                     </div>
                   </div>
-                  <div className="sci">
+                  <div className="user_common_sci">
                     <p>
                       <h1>{item.name}</h1>
                     </p>

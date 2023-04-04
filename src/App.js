@@ -15,18 +15,18 @@ function App() {
   const { isAuth, userRole, login } = useContext(AuthContext);
   return (
     <>
-      <div>{!isAuth && <Login onLogin={login} />}</div>
+      {!isAuth && <Login onLogin={login} />}
       {isAuth && (
         <BrowserRouter>
           <div className="flex relative">
             <div className="w-[8%] fixed sidebar bg-sidebar-bg z-50 text-clip">
               <Sidebar />
             </div>
-            <div className="bg-main-bg absolute left-[8%] w-[92%]">
-              <div className="fixed w-[92%] z-[5]">
+            <div className="bg-main-bg absolute left-[8%] w-[92%] sm:w-[100%] sm:left-[0%] md:w-[100%] md:left-[0%] xs:w-[100%] xs:left-[0%]">
+              <div className="fixed w-[92%] z-[5] xs:w-[100%] sm:w-[100%] md:w-[100%]">
                 <Navbar />
               </div>
-              <div className="z-[1] bg-main-bg absolute top-14 min-h-[90vh] w-full ">
+              <div className="z-[1] bg-main-bg absolute top-14 w-[100%] h-auto md:h-auto sm:block ">
                 <div>
                   {userRole === "admin@gmail.com" ? <HomeAdmin /> : ""}
                   {userRole === "manufacturer@gmail.com" ? (

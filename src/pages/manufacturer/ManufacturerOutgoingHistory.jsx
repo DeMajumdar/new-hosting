@@ -87,10 +87,10 @@ function ManufacturerOutgoingHistory() {
 
   return (
     <>
-      <Header category="Page" title="Manufacturer | Outgoing Batches" />
+      {/* <Header category="Page" title="Manufacturer | Outgoing Batches" /> */}
       {showExport && <FileExport data={data} onCloseRecieved={closePopup} />}
-      <div className="rounded-lg">
-        <div className="bg-white mt-2 flex justify-between ">
+      <div className="m-2 rounded-lg">
+        <div className="bg-white mt-2 flex justify-between flex-wrap ">
           <div>
             {/* <input
               placeholder="Search"
@@ -122,7 +122,7 @@ function ManufacturerOutgoingHistory() {
             </button> */}
           </div>
         </div>
-        <div className="overflow-hidden bg-white shadow-md">
+        <div className="overflow-x-scroll bg-white shadow-md">
           <table className=" min-h-[70vh] w-full border-collapse text-left text-sm text-gray-500">
             <thead className="bg-gray-50 border-t-1">
               <tr>
@@ -154,21 +154,21 @@ function ManufacturerOutgoingHistory() {
               <tbody className="divide-y divide-gray-100 border-t border-gray-100">
                 {displayedData.map((item) => (
                   <tr className="hover:bg-gray-50" key={item.id}>
-                    <td className="px-6 py-1 font-medium text-gray-900">
+                    <td className="px-6 py-2">
                       {item.Key}
                     </td>
-                    <td className="px-6 py-1font-medium text-gray-900">
+                    <td className="px-6 py-2">
                       {item.Record.actualPath}
                     </td>
                     {/* <td class="px-3 py-2">{item.Record.batchId}</td> */}
-                    <td className="px-6 py-1 font-medium text-gray-900">
+                    <td className="px-6 py-2">
                       {item.Record.currentLocation}
                     </td>
-                    <td className="px-6 py-1font-medium text-gray-900">
+                    <td className="px-6 py-2">
                       {item.Record.route[0]}-{item.Record.route[1]}-
                       {item.Record.route[2]}-{item.Record.route[3]}
                     </td>
-                    <td className="px-6 py-1font-medium text-gray-900">
+                    <td className="px-6 py-2">
                       {item.Record.soldStatus.toString()}
                     </td>
                     {/* <td class="px-6 py-2">

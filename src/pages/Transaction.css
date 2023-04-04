@@ -1,0 +1,130 @@
+.transaction_container{
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.transaction_firstcontainer{
+    background: white;
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.transaction_inputContainer{
+    width: 13rem;
+    height: 2rem;
+}
+
+.transaction_buttonContainer{
+    display: flex;
+    margin: 1rem;
+    vertical-align: baseline;
+}
+
+.transaction_tableContent{
+    overflow-x: scroll;
+    background: white;
+    /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+}
+
+.transaction_table{
+    min-height: 70vh;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.75rem;
+    color: rgb(107 114 128);
+}
+
+.transaction_tableHeading{
+    background-color: rgb(249 250 251);
+}
+
+
+.transaction_firstHeading{
+    padding: 16px 24px 24px 16px;
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+
+.transaction_secondHeading{
+    padding: 16px 24px 24px 16px;
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+
+.transaction_thirdHeading{
+    padding: 16px 24px 24px 16px;
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+
+.transaction_forthHeading{
+    padding: 16px 24px 24px 16px;
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+
+.transaction_fifthHeading{
+    padding: 16px 24px 24px 16px;
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+
+.transaction_sixthHeading{
+    padding: 16px 24px 24px 16px;
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+
+.transaction_seventhHeading{
+    padding: 16px 24px 24px 16px;
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+
+.transaction_tBodyContainer{
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-color: rgb(243 244 246);
+    border-top-width: 1px;
+    /* border-color: rgb(243 244 246); */
+}
+
+.transaction_tBodyFirstCol{
+    padding: 8px;
+}
+
+.transaction_tBodySecondCol{
+    padding: 8px 24px 24px 8px;
+}
+
+
+.transaction_tBodyThirdCol{
+    padding: 8px 24px 24px 8px;
+}
+
+
+.transaction_tBodyForthCol{
+    padding: 8px 24px 24px 8px;
+}
+
+
+.transaction_tBodyFifthCol{
+    padding: 8px 24px 24px 8px;
+}
+
+
+.transaction_tBodySixthCol{
+    padding: 8px 24px 24px 8px;
+}
+
+
+.transaction_loadingSpinnerContent{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+
+

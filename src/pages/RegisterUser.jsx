@@ -76,48 +76,48 @@ const RegisterUser = () => {
         <div class="grid grid-cols-1 gap-1 md:grid-cols-2 mt-2 pr-8">
           <form onSubmit={handleSubmit}>
           <input
-            class="w-full bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
             placeholder="First Name*"
             value={formData.firstName}
             onChange={updateFormData}
           />
           <input
-            class="w-full bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
             placeholder="Last Name*"
             value={formData.lastName}
             onChange={updateFormData}
           />
           <input
-            class="w-full bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline"
             type="email"
             placeholder="Email*"
             value={formData.email}
             onChange={updateFormData}
           />
           <input
-            class="w-full bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline"
             type="number"
             placeholder="Phone*"
             value={formData.phonenumber}
             onChange={updateFormData}
           />
           <input
-            class="w-full bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
             placeholder="Password*"
             value={formData.password}
             onChange={updateFormData}
           />
           <input
-            class="w-full bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+           class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
             placeholder="Confirm Password*"
             value={formData.confirmpass}
             onChange={updateFormData}
           />
-          <select class="w-full left-0.5 relative bg-gray-100 text-gray-900 my-1 mx-3 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          <select class="w-[97%] left-0.5 relative bg-gray-100 text-gray-400 my-1 mx-3 p-3 rounded-lg  focus:shadow-outline"
           // value={formData}
           onChange={updateFormData}
           >

@@ -105,10 +105,10 @@ function DistributorIncomingBatch() {
 
   return (
     <>
-      <Header category="" title="Distributor | Incoming Batches" />
+      {/* <Header category="" title="Distributor | Incoming Batches" /> */}
       {showExport && <FileExport data={data} onCloseRecieved={closePopup} />}
       <div className="rounded-lg">
-        <div className="bg-white mt-2 flex justify-between ">
+        <div className="bg-white mt-2 flex flex-wrap ">
           <div>
             <form onSubmit={handleSearchSubmit}>
               <input
@@ -140,7 +140,7 @@ function DistributorIncomingBatch() {
             </button> */}
           </div>
         </div>
-        <div className="overflow-hidden bg-white shadow-md">
+        <div className="overflow-x-scroll bg-white shadow-md">
           <table className=" min-h-[70vh] w-full border-collapse text-left text-sm text-gray-500">
             <thead className="bg-gray-50 border-t-1">
               <tr>

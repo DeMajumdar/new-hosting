@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       fontSize: {
         14: "14px",
+        11: "11px",
+        10: "10px",
       },
       backgroundColor: {
         "sidebar-bg": "#0B2853",
@@ -48,11 +50,14 @@ module.exports = {
       },
     },
     screens: {
-      'sm': {'min': '640px', 'max': '767px'},
-      // => @media (min-width: 640px and max-width: 767px) { ... }
+      'xs': {'min': '200px', 'max': '399px'},
+       // => @media (min-width: 280px and max-width: 399px) { ... } for mobile
 
-      'md': {'min': '768px', 'max': '1023px'},
-      // => @media (min-width: 768px and max-width: 1023px) { ... }
+      'sm': {'min': '400px', 'max': '767px'},
+      // => @media (min-width: 640px and max-width: 767px) { ... } for mobile
+
+      'md': {'min': '768px', 'max': '990px'},
+      // => @media (min-width: 768px and max-width: 1023px) { ... } for tablet
 
       'lg': {'min': '1024px', 'max': '1279px'},
       // => @media (min-width: 1024px and max-width: 1279px) { ... }

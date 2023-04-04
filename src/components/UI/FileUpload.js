@@ -78,14 +78,18 @@ const FileUpload = (props) => {
   }
   return (
     <div className="bg-white shadow-lg rounded-lg w-1/2 h-2/3 fixed top-[20%] left-[25%] z-[5]">
-      <Header category="" title="Import File Here" />
+      {/* <Header category="" title="Import File Here" /> */}
       <button
         className="absolute top-0 right-0 p-4 text-xl hover:text-red-600 "
         onClick={onClick}
       >
         <AiOutlineClose />
       </button>
-      <div className="flex flex-col justify-center m-12">
+      {/* <Header category="" title="Import File Here"/> */}
+      <div className=" text-lg flex justify-center m-2 sm:my-10">
+        <h1>Import File Here</h1>
+      </div>
+      <div className="flex flex-col justify-center m-12 sm:m-0">
         <div className="flex justify-center text-7xl m-2">
           <CiImport />
         </div>
@@ -98,7 +102,7 @@ const FileUpload = (props) => {
           <p>Upload Files</p>
         </div>
         <div className="flex justify-center m-2">
-          <input type="file" onChange={handleFileUpload} />
+          <input className="sm:p-2 sm:m-2" type="file" onChange={handleFileUpload} />
         </div>
         <div>
           <p>{file.name}</p>

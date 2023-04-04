@@ -90,10 +90,10 @@ function ScanHistory() {
 
   return (
     <>
-      <Header category="Page" title="WareHouse | Scan History" />
+      {/* <Header category="Page" title="WareHouse | Scan History" /> */}
       {showExport && <FileExport data={data} onCloseRecieved={closePopup} />}
       <div className="rounded-lg">
-        <div className="bg-white mt-2 flex justify-between ">
+        <div className="bg-white mt-2 flex flex-wrap justify-between">
           <div>
             <form onSubmit={handleSearchSubmit}>
               <input
@@ -120,7 +120,7 @@ function ScanHistory() {
             </button> */}
           </div>
         </div>
-        <div class="overflow-hidden bg-white shadow-md">
+        <div class="overflow-x-scroll bg-white shadow-md">
           <table class=" min-h-[70vh] w-full border-collapse text-left text-sm text-gray-500">
             <thead class="bg-gray-50 border-t-1">
               <tr>

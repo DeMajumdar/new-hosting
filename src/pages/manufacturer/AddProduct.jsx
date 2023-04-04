@@ -142,17 +142,18 @@ const AddProduct = (props) => {
   return (
     <>
       {/* <Header category="Page" title="Manufacturer |Add Product" /> */}
-      <div className="bg-white shadow-lg rounded-lg w-1/2 h-2/3 fixed top-[10%] left-[25%] z-[5] text-center ">
+      {/* <div className="bg-white shadow-lg rounded-lg w-1/2 h-2/3 fixed top-[10%] left-[25%] z-[5] text-center ">
         <button
           className="absolute top-0 right-0 p-2 text-xl hover:text-red-600 "
           onClick={onClick}
         >
           <AiOutlineClose />
-        </button>
-        <div className="w-[90%]  mx-3 p-2 bg-white m-2  rounded-lg relative top-5">
+        </button> */}
+      <div className="w-[80%] mx-auto p-4 rounded-lg shadow-lg bg-white my-2">
+        <div class="grid grid-cols-1 gap-1 mt-8">
           <form onSubmit={handleSubmit}>
             <input
-              className="w-full bg-gray-100 text-gray-900 m-3 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline md:m-2 sm:m-1 xs:m-1"
               type="text"
               name="productName"
               value={formData.productName}
@@ -161,7 +162,7 @@ const AddProduct = (props) => {
             />
 
             <input
-              className="w-full bg-gray-100 text-gray-900 m-3 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline md:m-2 sm:m-1 xs:m-1"
               type="text"
               name="productCategory"
               value={formData.productCategory}
@@ -169,7 +170,7 @@ const AddProduct = (props) => {
               placeholder="Product Category*"
             />
             <input
-              className="w-full bg-gray-100  m-3 p-3 rounded-lg focus:outline-none focus:shadow-outline text-zinc-400"
+              class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline md:m-2 sm:m-1 xs:m-1"
               type="text"
               name="manufacturingDate"
               value={formData.manufacturingDate}
@@ -178,7 +179,7 @@ const AddProduct = (props) => {
               //onfocus="(this.type='date')
             />
             <input
-              className="w-full bg-gray-100 text-gray-900 m-3 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline md:m-2 sm:m-1 xs:m-1"
               type="text"
               name="manufacturingLocation"
               value={formData.manufacturingLocation}
@@ -186,14 +187,14 @@ const AddProduct = (props) => {
               placeholder="Manufacturing Location*"
             />
             <input
-              className="w-full bg-gray-100 text-gray-900 m-3 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline md:m-2 sm:m-1 xs:m-1"
               type="text"
               name="price"
               value={formData.price}
               onChange={handleInputChange}
               placeholder="Price*"
             />
-            <div className="w-[100%]  mx-2 p-2 bg-white m-2  rounded-lg relative">
+            <div className="m-2">
               <Button type="submit">Add Product</Button>
             </div>
           </form>

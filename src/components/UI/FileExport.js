@@ -69,14 +69,17 @@ const FileExport = (props) => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg w-1/2 h-2/3 fixed top-[20%] left-[25%] z-[5]">
-      <Header category="" title="Export File Here" />
+      {/* <Header category="" title="Export File Here" /> */}
       <button
         className="absolute top-0 right-0 p-4 text-xl hover:text-red-600 "
         onClick={onClick}
       >
         <AiOutlineClose />
       </button>
-      <div className="flex flex-col justify-center m-12">
+      <div className=" text-lg flex justify-center m-2 sm:my-10">
+        <h1>Import File Here</h1>
+      </div>
+      <div className="flex flex-col justify-center m-12 sm:m-0">
         <div className="flex justify-between m-2">
           <CSVLink data={csvData}>
             <Button>CSV</Button>

@@ -146,7 +146,7 @@ const RouteMaster = () => {
             </NavLink>
           </div>
         </div> */}
-        <div className="bg-white mt-3 flex justify-between ">
+        <div className="bg-white mt-3 flex justify-between flex-wrap sm:hidden">
           <div>
             <form onSubmit={handleSearchSubmit}>
               <input
@@ -183,7 +183,7 @@ const RouteMaster = () => {
             </button> */}
           </div>
         </div>
-        <div class="overflow-hidden bg-white shadow-md">
+        <div class="overflow-x-scroll bg-white shadow-md">
           <table class=" min-h-[70vh] w-full border-collapse text-left text-sm text-gray-500">
             <thead class="bg-gray-50">
               <tr>

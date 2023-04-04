@@ -13,9 +13,9 @@ const UserProfile = (props) => {
   const clickClose = props.close;
 
   return (
-    <div className="nav-item absolute right-4 top-16 bg-white dark:bg-[#42464D] p-4 rounded-lg w-80 z-50 shadow-lg shadow-gray">
+    <div className="nav-item absolute right-4 top-16 bg-white dark:bg-[#42464D] p-4 rounded-lg w-80 z-50 shadow-lg shadow-gray sm:w-64 xs:w-56">
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
+        <p className="font-semibold text-lg dark:text-gray-200 sm:text-base xs:text-sm ">User Profile</p>
         <Btn
           className="text-[rgb(153, 171, 180)] hover:bg-light-gray text-2xl rounded-full"
           bgHoverColor="light-gray"
@@ -27,20 +27,20 @@ const UserProfile = (props) => {
       </div>
       <div className="flex gap-5 items-center pb-6">
         <img
-          className="rounded-full h-24 w-24"
+          className="rounded-full h-24 w-24 md:h-20 md:w-20 sm:h-16 sm:w-16 xs:h-12 xs:w-12"
           src={avatar}
           alt="user-profile"
         />
         <div>
-          <p className="font-semibold text-xl dark:text-gray-200">
+          <p className="font-semibold text-xl dark:text-gray-200 md:text-base sm:text-sm xs:text-xs">
             {" "}
             Michael Roberts{" "}
           </p>
-          <p className="text-gray-500 text-sm dark:text-gray-400">
+          <p className="text-gray-500 text-sm dark:text-gray-400 sm:text-xs xs:text-xs">
             {" "}
             Administrator{" "}
           </p>
-          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400">
+          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400 sm:text-xs xs:text-xs">
             {" "}
             info@shop.com{" "}
           </p>
@@ -60,8 +60,8 @@ const UserProfile = (props) => {
               {item.icon}
             </button>
             <div>
-              <p className="font-semibold dark:text-gray-200 ">{item.title}</p>
-              <p className="text-gray-500 text-sm dark:text-gray-400">
+              <p className="font-semibold dark:text-gray-200 sm:text-sm xs:text-xs">{item.title}</p>
+              <p className="text-gray-500 text-sm dark:text-gray-400 sm:text-xs xs:text-xs">
                 {" "}
                 {item.desc}{" "}
               </p>

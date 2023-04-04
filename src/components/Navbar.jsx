@@ -14,7 +14,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       type="button"
       onClick={() => customFunc()}
       style={{ color }}
-      className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      className="relative text-xl rounded-full p-3 hover:bg-light-gray xs:text-base xs:p-2"
     >
       <span
         style={{ background: dotColor }}
@@ -45,14 +45,14 @@ const Navbar = (props) => {
 
 
   return (
-    <div className="flex justify-between w-full bg-navbar-bg rounded-lg ">
+    <div className="flex justify-between w-full bg-navbar-bg h-14 ">
       <div className="px-2">
         <p className="text-md text-gray-400">{category}</p>
-        <p className="text-lg font-extrabold tracking-tight text-[#0B2853]">
+        <p className="text-lg sm:text-xs xs:text-xs font-extrabold tracking-tight text-[#0B2853]">
           {title}
         </p>
       </div>
-      <div className="flex pr-2">
+      <div className="flex pr-2 ">
         <NavButton
           title="Notification"
           dotColor="rgb(254, 201, 15)"
@@ -63,16 +63,16 @@ const Navbar = (props) => {
         <div content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            //onClick={handleClick}
+            onClick={openProfile}
           >
             <img
-              className="rounded-full w-8 h-8"
+              className="rounded-full w-8 h-8 xs:w-4 xs:h-4"
               src={avatar}
               alt="user-profile"
             />
             <p>
-              <span className="text-stone-600 text-14">Hi,</span>{" "}
-              <span className="text-stone-600 font-bold ml-1 text-14">
+              <span className="text-stone-600 text-14 xs:text-10">Hi,</span>{" "}
+              <span className="text-stone-600 font-bold ml-1 text-14 xs:text-10">
                 Michael
               </span>
             </p>

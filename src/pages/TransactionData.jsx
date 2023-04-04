@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import { useStateContext } from "../contexts/ContextProvider";
 import FileExport from "../components/UI/FileExport";
 import Button from "../components/UI/Button/Button";
+import "./Transaction.css";
 
 const URL = "http://20.193.146.8:8080/api/getallbatches";
 
@@ -134,13 +135,13 @@ const TransactionMaster = () => {
       {showExport && (
         <FileExport data={displayedData} onCloseRecieved={closePopup} />
       )}
-      <div className="m-2 rounded-lg">
-        <div className="bg-white mt-3 flex justify-between ">
+      <div className="transaction_container">
+        <div className="transaction_firstcontainer">
           <div>
             <form onSubmit={handleSearchSubmit}>
               <input
                 placeholder="Search"
-                className="w-52 h-8"
+                className="transaction_inputContainer"
                 value={filterParam}
                 // onChange={(e) => setFilterParam(e.target.value)}
                 onChange={handleSearchChange}
@@ -148,14 +149,14 @@ const TransactionMaster = () => {
               {/* <Button type="submit">Search</Button> */}
             </form>
           </div>
-          <div className=" flex align-baseline m-4">
-            <Button className="" onClick={handleClick}>
+          <div className="transaction_buttonContainer">
+            <Button onClick={handleClick}>
               {/* <p className="text-2xl">
                 <AiOutlineImport />
               </p> */}
               Import
             </Button>
-            <Button className="" onClick={exportClick}>
+            <Button onClick={exportClick}>
               {/* <ExportIcon /> */}
               Export
             </Button>
@@ -166,36 +167,36 @@ const TransactionMaster = () => {
             </button> */}
           </div>
         </div>
-        <div className="overflow-x-scroll bg-white shadow-md">
-          <table className=" min-h-[70vh] w-[100%] border-collapse text-left text-sm text-gray-500">
-            <thead className="bg-gray-50">
+        <div className="transaction_tableContent">
+          <table className="transaction_table">
+            <thead className="transaction_tableHeading">
               <tr>
-                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                <th scope="col" className="transaction_firstHeading">
                   AC ID
                 </th>
-                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                <th scope="col" className="transaction_secondHeading">
                   Current Location
                 </th>
-                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                <th scope="col" className="transaction_thirdHeading">
                   Route
                 </th>
-                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                <th scope="col" className="transaction_forthHeading">
                   Actual Path
                 </th>
-                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                <th scope="col" className="transaction_fifthHeading">
                   Sold Status
                 </th>
-                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                <th scope="col" className="transaction_sixthHeading">
                   QR Code
                 </th>
                 <th
                   scope="col"
-                  className="px-6 py-4 font-medium text-gray-900"
+                  className="transaction_seventhHeading"
                 />
               </tr>
             </thead>
             {data != "" ? (
-              <tbody className="divide-y divide-gray-100 border-t border-gray-100">
+              <tbody className="transaction_tBodyContainer">
                 {displayedData.map((item) => (
                   <tr className="hover:bg-gray-50" key={item.id}>
                     <td className="px-2 py-2">{item.Record.batchId}</td>
@@ -206,7 +207,7 @@ const TransactionMaster = () => {
                       {item.Record.soldStatus.toString()}
                     </td>
                     <td className="px-6 py-2">
-                      <QRCode value={item.Record.batchId} size={100} />
+                      <QRCode value={item.Record.batchId} size={60} />
                       {/* <div class="flex justify-end gap-4">
                         <button x-data="{ tooltip: 'Delete' }">
                           <svg
@@ -248,7 +249,7 @@ const TransactionMaster = () => {
                 ))}
               </tbody>
             ) : (
-              <div className="text-lg">
+              <div className="transaction_loadingSpinnerContent">
                 <LoadingSpinner />
               </div>
             )}

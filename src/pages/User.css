@@ -34,9 +34,9 @@ section::after {
 	clip-path: circle(20% at 10% 10%);
 } */
 
-.container {
+.user_common_container {
 	position: relative;
-    width: 95%;
+    /* width: 95%; */
 	top:15%;
 	z-index: 1;
 	display: flex;
@@ -57,7 +57,7 @@ section::after {
 	margin:40px;
 } */
 
-.container .card {
+.user_common_container .user_common_card {
 	position: relative;
 	width: 250px;
 	height: 250px;
@@ -71,7 +71,7 @@ section::after {
 	backdrop-filter: blur(10px);
 }
 
-.container .card .content {
+.user_common_container .user_common_card .user_common_content {
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -80,18 +80,18 @@ section::after {
 	transition: 0.5s;
 }
 
-.container .card:hover .content {
+.user_common_container .user_common_card:hover .user_common_content {
 	transform: translateY(-20px);
 }
 
-.container .card .content .imgBx {
+.user_common_container .user_common_card .user_common_content .user_common_imgBx {
 	position: relative;
 	width: 120px;
 	height: 120px;
 	overflow: hidden;
 }
 
-.container .card .content .imgBx img {
+.user_common_container .user_common_card .user_common_content .user_common_imgBx img {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -100,7 +100,7 @@ section::after {
 	object-fit: cover;
 }
 
-.container .card .content .contentBx h3 {
+.user_common_container .user_common_card .user_common_content .contentBx h3 {
 	color: rgb(0, 0, 0);
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -111,20 +111,20 @@ section::after {
 	line-height: 1.1em;
 }
 
-.container .card .content .contentBx h3 span {
+.user_common_container .user_common_card .user_common_content .contentBx h3 span {
 	font-size: 12px;
 	font-weight: 300;
 	text-transform: initial;
 }
 
-.container .card .sci {
+.user_common_container .user_common_card .user_common_sci {
 	position: absolute;
 	bottom: 50px;
 	display: flex;
 	font-size:large
 }
 
-.container .card .sci p {
+.user_common_container .user_common_card .user_common_sci p {
 	list-style: none;
 	margin: 0 10px;
 	transform: translateY(40px);
@@ -132,13 +132,13 @@ section::after {
 	opacity: 0;
 }
 
-.container .card:hover .sci p {
+.user_common_container .user_common_card:hover .user_common_sci p {
 	transform: translateY(0px);
 	opacity: 1;
 	color: #2e86ab;
 }
 
-.container .card .sci p h1 {
+.user_common_container .user_common_card .user_common_sci p h1 {
 	color: rgb(0, 0, 0);
 	font-size: 20px;
 }
