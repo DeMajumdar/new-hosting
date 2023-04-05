@@ -17,8 +17,8 @@ function App() {
     <>
       {!isAuth && <Login onLogin={login} />}
       {isAuth && (
-        <BrowserRouter>
-          <div className="flex relative">
+        <div className="flex relative min-h-[100vh]">
+          <BrowserRouter>
             <div className="w-[8%] fixed sidebar bg-sidebar-bg z-50 text-clip">
               <Sidebar />
             </div>
@@ -44,8 +44,8 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
-        </BrowserRouter>
+          </BrowserRouter>
+        </div>
       )}
     </>
   );

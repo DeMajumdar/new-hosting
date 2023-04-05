@@ -9,6 +9,7 @@ import {
   storageRoutes,
 } from '../data/link';
 import { AuthContext } from '../contexts/auth-context';
+import { useMediaQuery } from "@material-ui/core";
 
 const Sidebar = () => {
   const { userRole } = useContext(AuthContext);
