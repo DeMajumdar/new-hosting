@@ -37,9 +37,9 @@ import { useStateContext } from "../contexts/ContextProvider";
 
 const SidebarMenu = ({ route }) => {
   const activeLink =
-    "flex  flex-col items-center gap-1 p-2 rounded-lg text-black font-semibold text-md m-2 bg-active-bg";
+    "flex  flex-col items-center gap-1 p-2 rounded-lg text-black font-semibold text-md bg-active-bg";
   const normalLink =
-    " flex flex-col justify-center items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 m-2";
+    " flex flex-col justify-center items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 ";
 
   // const dropDown= props.onDropDown;
 
