@@ -69,9 +69,9 @@ const TablePagination = (props) => {
         </select>
       </div>
       <div className="inline-flex ">
-        {/* <div>
-          {currentPage} to {pageSize} of {totalPages}
-        </div> */}
+         <div>
+          {currentPage} of {totalPages}
+        </div> 
         <button onClick={handlePageChange_prev} className="px-4 text-red-400">
           <GrFormPrevious />
         </button>

@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import SidebarMenu from "./SidebarMenu";
+import React, { useContext, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { useMediaQuery } from '@material-ui/core';
+import SidebarMenu from './SidebarMenu';
 import {
   adminRoutes,
   manufacturerRoutes,
@@ -9,7 +10,6 @@ import {
   storageRoutes,
 } from '../data/link';
 import { AuthContext } from '../contexts/auth-context';
-import { useMediaQuery } from "@material-ui/core";
 
 const Sidebar = () => {
   const { userRole } = useContext(AuthContext);
@@ -26,19 +26,16 @@ const Sidebar = () => {
     routes = retailerRoutes;
   }
 
-  const activeLink =
-    "flex flex-col justify-center items-center gap-1 p-2 md:p-1 rounded-lg text-black font-semibold text-md bg-active-bg";
-  const normalLink =
-    "flex flex-col justify-center items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 hover:text-[#7b8cb8] m-2";
+  const activeLink = 'flex flex-col justify-center items-center gap-1 p-2 md:p-1 rounded-lg text-black font-semibold text-md bg-active-bg  m-2';
+  const normalLink = 'flex flex-col justify-center items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 hover:text-[#7b8cb8] m-2';
 
-  const isSmallScreen = useMediaQuery("(max-width: 990px)");
+  const isSmallScreen = useMediaQuery('(max-width: 990px)');
 
-  const [isModal,setIsModal] = useState(false);
+  const [isModal, setIsModal] = useState(false);
 
-  const openModal = () =>{
+  const openModal = () => {
     setIsModal(!isModal);
-  }
-  
+  };
 
   return (
     <>
@@ -53,13 +50,13 @@ const Sidebar = () => {
             </Link>
           </div>
           <div className="mt-0">
-            <div 
+            <div
               // style={{
               //   display: "flex",
               //   flexDirection: "column",
               //   alignItems: "center",
               //   justifyContent: "center",
-              // }}  
+              // }}
               className="flex flex-col justify-center"
             >
               {routes.map((route, index) => {
@@ -68,24 +65,18 @@ const Sidebar = () => {
                 }
 
                 return (
-                  <>
-                 
-                      <NavLink
-                        to={route.path}
-                        key={index}
-                        className={({ isActive }) =>
-                          isActive ? activeLink : normalLink
-                        }
-                      >
-                        <div className="text-base flex justify-center hover:text-[#1b67cc]">
-                          {route.icon}
-                        </div>
-                        <div className="capitalize flex justify-center text-center text-xs sm:hidden md:hidden">
-                          {route.name}
-                        </div>
-                      </NavLink>  
-                    
-                  </>
+                  <NavLink
+                    to={route.path}
+                    key={index}
+                    className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                  >
+                    <div className="text-base flex justify-center hover:text-[#1b67cc]">
+                      {route.icon}
+                    </div>
+                    <div className="capitalize flex justify-center text-center text-xs sm:hidden md:hidden">
+                      {route.name}
+                    </div>
+                  </NavLink>
                 );
                 // if (route.subRoutes) {
                 //   return <SidebarMenu route={route} />;
@@ -94,7 +85,7 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-       )}
+      )}
       {isSmallScreen && (
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-white pt-2">
           <div className="flex justify-center items-center py-2">
@@ -107,39 +98,35 @@ const Sidebar = () => {
             </Link>
           </div>
           <div className="flex justify-center ">
-            {isModal &&(
+            {isModal && (
               <div className="flex flex-row">
                   {routes.map((route) => {
-                  if (route.subRoutes) {
-                    return <SidebarMenu 
-                    route={route} 
-                    // onDropDown={isModal}
-                    />;
-                  }
-                  return (
-                    <>
-                      
-                        <NavLink
-                          to={route.path}
-                          style={{
-                            fontSize: "2.5rem",
-                            display: "flex",
-                          }}
-                        >
-                            {route.icon}
-                        </NavLink>
-                     
-                    </>
-                  );
-                })}
+                    if (route.subRoutes) {
+                      return (
+                        <SidebarMenu
+                          route={route}
+                        />
+                      );
+                    }
+                    return (
+                      <NavLink
+                        to={route.path}
+                        style={{
+                          fontSize: '2.5rem',
+                          display: 'flex',
+                        }}
+                      >
+                        {route.icon}
+                      </NavLink>
+                    );
+                  })}
               </div>
             )}
-          </div> 
+          </div>
         </div>
-        
-        
-      )} 
-      
+
+      )}
+
     </>
     // <>
     //     <div className="h-screen pb-10 pt-2 z-50">
@@ -154,7 +141,7 @@ const Sidebar = () => {
     //       <div className="mt-0">
     //         <div className="grid justify-center">
     //           {routes.map((route) => {
-    //             return <SidebarMenu route={route}/>;               
+    //             return <SidebarMenu route={route}/>;
     //           })}
     //         </div>
     //       </div>
