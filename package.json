@@ -24,6 +24,7 @@
     "react-icons": "^4.3.1",
     "react-papaparse": "^4.1.0",
     "react-router-dom": "^6.2.1",
+    "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
     "react-vis-network": "^1.0.0",
     "react-vis-network-graph": "^3.0.1",

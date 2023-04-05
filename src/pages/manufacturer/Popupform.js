@@ -136,7 +136,7 @@ const Popupform = () => {
           <div>
             <input
               placeholder="Search"
-              className="w-52 h-8"
+              className="w-52 block m-4 p-4 rounded-lg border-neutral-200 border-2 border-solid"
               onChange={(e) => setFilterParam(e.target.value)}
             />
           </div>

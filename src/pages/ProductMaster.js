@@ -176,7 +176,7 @@ const ProductMaster = () => {
             <form onSubmit={handleSearchSubmit}>
               <input
                 placeholder="Search"
-                className="w-52"
+                className="w-52 block m-4 p-4 rounded-lg border-neutral-200 border-2 border-solid"
                 value={filterParam}
                 // onChange={(e) => setFilterParam(e.target.value)}
                 onChange={handleSearchChange}

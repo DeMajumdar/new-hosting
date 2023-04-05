@@ -136,13 +136,13 @@ const TransactionMaster = () => {
       {showExport && (
         <FileExport data={displayedData} onCloseRecieved={closePopup} />
       )}
-      <div className="transaction_container">
-        <div className="transaction_firstcontainer">
+      <div className="m-2 rounded-lg">
+        <div className="bg-white mt-3 flex justify-between flex-wrap sm:hidden">
           <div>
             <form onSubmit={handleSearchSubmit}>
               <input
                 placeholder="Search"
-                className="transaction_inputContainer"
+                className="w-52 block m-4 p-4 rounded-lg border-neutral-200 border-2 border-solid"
                 value={filterParam}
                 // onChange={(e) => setFilterParam(e.target.value)}
                 onChange={handleSearchChange}
@@ -150,7 +150,7 @@ const TransactionMaster = () => {
               {/* <Button type="submit">Search</Button> */}
             </form>
           </div>
-          <div className="transaction_buttonContainer">
+          <div className=" flex align-baseline m-4">
             <Button onClick={handleClick}>
               {/* <p className="text-2xl">
                 <AiOutlineImport />
@@ -168,26 +168,26 @@ const TransactionMaster = () => {
             </button> */}
           </div>
         </div>
-        <div className="transaction_tableContent">
-          <table className="transaction_table">
-            <thead className="transaction_tableHeading">
+        <div class="overflow-x-scroll bg-white shadow-md">
+         <table class=" min-h-[70vh] w-full border-collapse text-left text-sm text-gray-500">
+            <thead class="bg-gray-50">
               <tr>
-                <th scope="col" className="transaction_firstHeading">
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   AC ID
                 </th>
-                <th scope="col" className="transaction_secondHeading">
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   Current Location
                 </th>
-                <th scope="col" className="transaction_thirdHeading">
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   Route
                 </th>
-                <th scope="col" className="transaction_forthHeading">
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   Actual Path
                 </th>
-                <th scope="col" className="transaction_fifthHeading">
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   Sold Status
                 </th>
-                <th scope="col" className="transaction_sixthHeading">
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   QR Code
                 </th>
                 <th
@@ -197,7 +197,7 @@ const TransactionMaster = () => {
               </tr>
             </thead>
             {data != "" ? (
-              <tbody className="transaction_tBodyContainer">
+              <tbody className="divide-y divide-gray-100 border-t border-gray-100">
                 {displayedData.map((item) => (
                   <tr className="hover:bg-gray-50" key={item.id}>
                     <td className="px-2 py-2">{item.Record.batchId}</td>
@@ -250,7 +250,7 @@ const TransactionMaster = () => {
                 ))}
               </tbody>
             ) : (
-              <div className="transaction_loadingSpinnerContent">
+              <div className="text-lg">
                 <LoadingSpinner />
               </div>
             )}

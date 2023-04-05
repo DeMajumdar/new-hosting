@@ -67,7 +67,7 @@ const SidebarMenu = ({ route }) => {
           className={({ isActive }) => (isActive ? activeLink : normalLink)}
           onClick={toogle}
         >
-          <div className="flex justify-center curson-pointer text-xl">
+          <div className="flex justify-center curson-pointer text-base">
             {/* style={{
               fontSize: "1.5rem",
               display: "flex",
