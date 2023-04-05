@@ -26,8 +26,8 @@ const Sidebar = () => {
     routes = retailerRoutes;
   }
 
-  const activeLink = 'flex flex-col justify-center items-center gap-1 p-2 md:p-1 rounded-lg text-black font-semibold text-md bg-active-bg  m-2';
-  const normalLink = 'flex flex-col justify-center items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 hover:text-[#7b8cb8] m-2';
+  const activeLink = 'flex flex-col justify-center items-center gap-1 p-2 md:p-1 rounded-lg text-black font-semibold text-md bg-active-bg  ';
+  const normalLink = 'flex flex-col justify-center items-center gap-1 p-2 rounded-lg text-md font-semibold text-white dark:text-gray-200 hover:text-[#7b8cb8] ';
 
   const isSmallScreen = useMediaQuery('(max-width: 990px)');
 
