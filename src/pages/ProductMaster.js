@@ -239,7 +239,7 @@ const ProductMaster = () => {
               </tr>
             </thead>
             {data != "" ? (
-              <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+              <tbody class="divide-y divide-gray-100 border-t border-gray-100 w-full">
                 {displayedData.map((item) => (
                   <tr class="hover:bg-gray-50" key={item.id}>
                     <td class="px-6 py-2">{item.doc._id}</td>
