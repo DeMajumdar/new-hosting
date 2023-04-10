@@ -8,6 +8,8 @@ import DistributorActivity from "./DistributorActivity";
 function DashboardDistributor() {
   return (
     <>
+
+    
       <DistributorActivity />
     </>
   );
