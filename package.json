@@ -10,11 +10,14 @@
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.11.9",
     "chart.js": "^4.2.1",
+    "css-loader": "^6.7.3",
     "file-saver": "^2.0.5",
     "google-map-react": "^2.2.0",
     "google-maps-react": "^2.0.6",
+    "html-webpack-plugin": "^5.5.0",
     "loadjs": "^4.3.0-rc1",
     "papaparse": "^5.3.2",
+    "postcss-loader": "^7.1.0",
     "qrcode.react": "^3.1.0",
     "react": "^17.0.2",
     "react-csv": "^2.2.2",
@@ -24,21 +27,23 @@
     "react-icons": "^4.3.1",
     "react-papaparse": "^4.1.0",
     "react-router-dom": "^6.2.1",
-    "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
     "react-vis-network": "^1.0.0",
     "react-vis-network-graph": "^3.0.1",
     "sheetjs-style": "^0.15.8",
+    "style-loader": "^3.3.2",
     "uuid": "^9.0.0",
     "vis": "^4.21.0-EOL",
     "vis-data": "^7.1.4",
     "vis-network": "^9.1.2",
+    "webpack": "^5.77.0",
+    "webpack-dev-server": "^4.13.1",
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "babel src -d lib",
-    "test": "jest",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --config ./src/webpack.config.js",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -61,9 +66,11 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
     "autoprefixer": "^10.4.2",
+    "babel-loader": "^9.1.2",
     "eslint": "^8.9.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.4",
@@ -71,11 +78,21 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.19"
+    "tailwindcss": "^3.0.19",
+    "webpack-cli": "^5.0.1"
   },
   "browser": {
     "fs": false,
     "os": false,
     "path": false
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   }
 }
