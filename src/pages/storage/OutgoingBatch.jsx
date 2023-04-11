@@ -23,7 +23,7 @@ function OutgoingBatch() {
     fetch("http://20.193.146.8:8080/api/getallbatches")
       .then((response) => response.json())
       .then((data) => {
-        setData(data.filter((item) => item.Record.route.includes("Storage")));
+        setData(data.filter((item) => item.Record.actualPath.includes("Storage")));
       })
       .catch((error) => console.error(error));
   }, []);

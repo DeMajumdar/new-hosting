@@ -23,7 +23,7 @@ function RetailerScanHistory() {
     fetch("http://20.193.146.8:8080/api/getallbatches")
       .then((response) => response.json())
       .then((data) => {
-        setData(data.filter((item) => item.Record.route.includes("Retailer")));
+        setData(data.filter((item) => item.Record.actualPath.includes("Retailer")));
       })
       .catch((error) => console.error(error));
   }, []);

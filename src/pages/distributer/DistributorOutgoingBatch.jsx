@@ -24,7 +24,7 @@ function DistributorOutgoingBatch() {
       .then((response) => response.json())
       .then((data) => {
         setData(
-          data.filter((item) => item.Record.route.includes("Distributor"))
+          data.filter((item) => item.Record.actualPath.includes("Distributor"))
         );
       })
       .catch((error) => console.error(error));
