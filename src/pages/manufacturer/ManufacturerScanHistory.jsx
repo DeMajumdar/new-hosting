@@ -19,7 +19,7 @@ function ManufacturerScanHistory() {
     fetch("http://20.193.146.8:8080/api/getallbatches")
       .then((response) => response.json())
       .then((data) => {
-        setData(data.filter((item) => item.Record.actualPath.includes("Storage")));
+        setData(data.filter((item) => item.Record.actualPath.includes("Manufacturer")));
       })
       .catch((error) => console.error(error));
   }, []);
