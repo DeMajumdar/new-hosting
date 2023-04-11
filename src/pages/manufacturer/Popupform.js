@@ -185,10 +185,6 @@ const Popupform = () => {
                 <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   MRP
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-4 font-medium text-gray-900"
-                />
               </tr>
             </thead>
             {data != "" ? (

@@ -181,7 +181,7 @@ const LocationMaster = () => {
           <div className=" flex align-baseline m-4">
             <Button>
               <NavLink to={"/addLocation"}>
-                Add location
+                Add Location
               </NavLink>
             </Button>
             <Button onClick={handleClick}>

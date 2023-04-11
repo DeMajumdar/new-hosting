@@ -102,7 +102,7 @@ const FileUpload = (props) => {
           <p>Upload Files</p>
         </div>
         <div className="flex justify-center m-2">
-          <input className="sm:p-2 sm:m-2" type="file" onChange={handleFileUpload} />
+          <input className="sm:p-2 sm:m-2 border" type="file" onChange={handleFileUpload} />
         </div>
         <div>
           <p>{file.name}</p>
