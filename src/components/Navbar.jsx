@@ -62,7 +62,7 @@ const Navbar = (props) => {
         />
         <div content="Profile" position="BottomCenter">
           <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            className="flex items-center gap-2 cursor-pointer p-3 hover:bg-light-gray rounded-lg"
             onClick={openProfile}
           >
             <img
