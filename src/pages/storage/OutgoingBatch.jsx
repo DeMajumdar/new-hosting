@@ -92,7 +92,7 @@ function OutgoingBatch() {
       {/* <Header category="Page" title="WareHouse | Outgoing Batches" /> */}
       {showExport && <FileExport data={data} onCloseRecieved={closePopup} />}
       <div className="rounded-lg">
-        <div className="bg-white mt-2 flex flex-wrap justufy-between">
+        <div className="bg-white mt-2 flex flex-wrap justify-between">
           <div>
           <form onSubmit={handleSearchSubmit}>
               <div className="flex m-4">
