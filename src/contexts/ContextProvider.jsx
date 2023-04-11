@@ -19,6 +19,12 @@ export const ContextProvider = ({ children }) => {
   const [displayedData, setDisplayedData] = useState([]);
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
+  const [isToggle, setIsToggle] = useState(false);
+
+  const handleToggle = () => {
+    setIsToggle(!isToggle);
+    console.log("Click bar:",isToggle);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -91,6 +97,9 @@ export const ContextProvider = ({ children }) => {
         setTitle,
         category,
         setCategory,
+        isToggle,
+        setIsToggle,
+        handleToggle,
       }}
     >
       {children}

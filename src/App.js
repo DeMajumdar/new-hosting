@@ -19,7 +19,9 @@ function App() {
       {isAuth && (
         <div className="flex relative min-h-[100vh]">
           <BrowserRouter>
-            <div className="w-[8%] fixed sidebar bg-sidebar-bg z-50 text-clip">
+            <div className="w-[8%] fixed sidebar bg-sidebar-bg z-50 text-clip md:w-[100%] sm:w-[100%] xs:w-[100%]
+
+">
               <Sidebar />
             </div>
             <div className="bg-main-bg absolute left-[8%] w-[92%] sm:w-[100%] sm:left-[0%] md:w-[100%] md:left-[0%] xs:w-[100%] xs:left-[0%]">
