@@ -55,7 +55,7 @@ const AddBOD = (props) => {
       console.error(error);
       alert('Failed to add BOD');
     }
-    window.location.href = '/masterData/bod';
+    window.location.href = '/bod';
   };
 
   const handleInputChange = (event) => {
@@ -103,7 +103,7 @@ const AddBOD = (props) => {
         </button> */}
       <div className="w-[80%] mx-auto p-4 rounded-lg shadow-lg bg-white my-2">
         <div className="grid grid-cols-1 gap-1 md:grid-cols-2 mt-8">
-          <form onSubmit={handleSubmit} action="/masterData/bod">
+          <form onSubmit={handleSubmit} action="/bod">
             <input
               className="w-[97%] bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"

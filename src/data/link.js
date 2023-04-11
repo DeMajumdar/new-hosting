@@ -97,12 +97,12 @@ export const adminRoutes = [
         icon: <MdOutlineLocationSearching />,
       },
       {
-        path: "/masterData/routes",
+        path: "/routes",
         name: "routes",
         icon: <FaRoute />,
       },
       {
-        path: "/masterData/bod",
+        path: "/bod",
         name: "BOD",
         icon: <MdOutlinePendingActions />,
       },

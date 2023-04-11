@@ -81,7 +81,7 @@ const AddRoute = (props) => {
     console.log("Selected values:", newRoute);
     console.log("Json Body", jsonBody);
     apicall(jsonBody);
-    window.location.href = "/masterData/routes";
+    window.location.href = "/routes";
   };
 
   // const route = ["Manufacturer", "Distributor-1", "Storage-2", "Retailer-4"];
@@ -166,7 +166,7 @@ const AddRoute = (props) => {
             >
               <IoMdAdd className="text-3xl" />
             </button>
-          <form onSubmit={handleSubmit} action="masterData/routes">
+          <form onSubmit={handleSubmit} action="/routes">
            
             <br />
             <br />

@@ -59,9 +59,9 @@ const HomeAdmin = () => {
       {/* MASTER DATA STARTS */}
       <Route path="/masterData/products" element={<ProductMaster />} />
       <Route path="/locations" element={<LocationMaster />} />
-      <Route path="/masterData/routes" element={<RouteMasterData />} />
+      <Route path="/routes" element={<RouteMasterData />} />
       <Route path="/transaction" element={<TransactionMaster />} />
-      <Route path="/masterData/bod" element={<BOD />} />
+      <Route path="/bod" element={<BOD />} />
       <Route path="/demo" element={<Demo />} />
       {/* MASTER DATA ENDS */}
 
