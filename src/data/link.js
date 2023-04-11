@@ -92,7 +92,7 @@ export const adminRoutes = [
         icon: <BsBox />,
       },
       {
-        path: "/masterData/locations",
+        path: "/locations",
         name: "locations",
         icon: <MdOutlineLocationSearching />,
       },
