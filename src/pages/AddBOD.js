@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-import Header from "../components/Header";
-import { useStateContext } from "../contexts/ContextProvider";
-import Button from "../components/UI/Button/Button";
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+import Header from '../components/Header';
+import { useStateContext } from '../contexts/ContextProvider';
+import Button from '../components/UI/Button/Button';
 
 const AddBOD = (props) => {
   const { setTitle, setCategory } = useStateContext();
   const [formData, setFormData] = useState({
-    pathID: "",
-    startingPoint: "",
-    endingPoint: "",
-    transitType: "",
-    avgTimeTaken: "",
-    distance: "",
+    pathID: '',
+    startingPoint: '',
+    endingPoint: '',
+    transitType: '',
+    avgTimeTaken: '',
+    distance: '',
   });
   const onClick = props.onCloseRecieved;
 
-  setTitle("/Add BOD");
-  setCategory("Data");
+  setTitle('/Add BOD');
+  setCategory('Data');
 
-  const apiUrl = "";
+  const apiUrl = '';
 
   // const handleInputChange  = (event) =>{
   //   setFormData( event.target.value);
@@ -29,35 +29,33 @@ const AddBOD = (props) => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "http://20.193.146.8:8080/api/data/bodmaster",
+        'http://20.193.146.8:8080/api/data/bodmaster',
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
       if (response.ok) {
         setFormData({
-          pathID: "",
-          startingPoint: "",
-          endingPoint: "",
-          transitType: "",
-          avgTimeTaken: "",
-          distance: "",
+          pathID: '',
+          startingPoint: '',
+          endingPoint: '',
+          transitType: '',
+          avgTimeTaken: '',
+          distance: '',
         });
-        alert("New BOD added successfully!");
-      }
-
-       else {
-        throw new Error("Failed to add BOD");
+        alert('New BOD added successfully!');
+      } else {
+        throw new Error('Failed to add BOD');
       }
     } catch (error) {
       console.error(error);
-      alert("Failed to add BOD");
+      alert('Failed to add BOD');
     }
-    window.location.href="/masterData/bod";
+    window.location.href = '/masterData/bod';
   };
 
   const handleInputChange = (event) => {
@@ -104,10 +102,10 @@ const AddBOD = (props) => {
           <AiOutlineClose />
         </button> */}
       <div className="w-[80%] mx-auto p-4 rounded-lg shadow-lg bg-white my-2">
-        <div class="grid grid-cols-1 gap-1 md:grid-cols-2 mt-8">
-          <form onSubmit={handleSubmit} action= "/masterData/bod">
+        <div className="grid grid-cols-1 gap-1 md:grid-cols-2 mt-8">
+          <form onSubmit={handleSubmit} action="/masterData/bod">
             <input
-              class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-[97%] bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               name="pathID"
               placeholder="Path ID*"
@@ -115,7 +113,7 @@ const AddBOD = (props) => {
               onChange={handleInputChange}
             />
             <input
-              class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-[97%] bg-gray-100 text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               name="startingPoint"
               placeholder="Starting Point*"
@@ -123,7 +121,7 @@ const AddBOD = (props) => {
               onChange={handleInputChange}
             />
             <input
-              class="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               name="endingPoint"
               placeholder="Ending Point*"
@@ -131,7 +129,7 @@ const AddBOD = (props) => {
               onChange={handleInputChange}
             />
             <input
-              class="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               name="transitType"
               placeholder="Transit Type*"
@@ -139,7 +137,7 @@ const AddBOD = (props) => {
               onChange={handleInputChange}
             />
             <input
-              class="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               name="avgTimeTaken"
               placeholder="Average Time Taken*"
@@ -147,7 +145,7 @@ const AddBOD = (props) => {
               onChange={handleInputChange}
             />
             <input
-              class="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-[97%] bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               name="distance"
               placeholder="Distance*"

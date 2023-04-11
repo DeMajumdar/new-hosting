@@ -60,7 +60,7 @@ const AddLocation = (props) => {
       console.error(error);
       alert("Failed to add location");
     }
-    window.location.href="/masterData/locations";
+    window.location.href="/locations";
   };
 
   const handleInputChange = (event) => {
@@ -184,7 +184,7 @@ const AddLocation = (props) => {
         </button> */}
         <div className="w-[80%] mx-auto p-4 rounded-lg shadow-lg bg-white my-2">
         <div class="grid grid-cols-1 gap-1 mt-8">
-          <form onSubmit={handleSubmit} action="/masterData/location">
+          <form onSubmit={handleSubmit} action="/locations">
             <input
               class="w-[97%] bg-gray-100 text-gray-900 mt-1 p-2 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
