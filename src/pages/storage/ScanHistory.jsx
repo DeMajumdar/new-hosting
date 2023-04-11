@@ -95,15 +95,18 @@ function ScanHistory() {
       <div className="rounded-lg">
         <div className="bg-white mt-2 flex flex-wrap justify-between">
           <div>
-            <form onSubmit={handleSearchSubmit}>
-              <input
-                placeholder="Search"
-                className="w-52 block m-4 p-4 rounded-lg border-neutral-200 border-2 border-solid"
-                value={filterParam}
-                // onChange={(e) => setFilterParam(e.target.value)}
-                onChange={handleSearchChange}
-              />
-              {/* <Button type="submit">Search</Button> */}
+          <form onSubmit={handleSearchSubmit}>
+              <div className="flex m-4">
+                <input
+                  placeholder="Search"
+                  className="w-52 block pl-4 rounded-lg border-neutral-200 border-2 border-solid"
+                  value={filterParam}
+                  onChange={handleSearchChange}
+                  //onChange={(e) => setFilterParam(e.target.value)}
+                >
+                </input>
+                <Button className="m-8" type="submit">Search</Button>
+              </div>
             </form>
           </div>
           <div className=" flex align-baseline m-4">

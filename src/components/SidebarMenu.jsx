@@ -27,14 +27,14 @@ const SidebarMenu = ({ item }) => {
           <div className="flex justify-center cursor-pointer text-xl">
             {item.icon}
           </div>
-          <div className="capitalize flex justify-center text-xs">
+          <div className="capitalize flex justify-center text-center">
             {item.name}
           </div>
       </NavLink>
       {subnav &&
         item.subRoutes.map((subRoute) =>{
             return (
-              <div style={{ background: "#7b8cb8"}}>
+              <div style={{ background: "#124186"}}>
 
                 <NavLink
                 to={subRoute.path}
@@ -42,10 +42,10 @@ const SidebarMenu = ({ item }) => {
                   isActive ? activeLink : normalLink
                 }
                 >
-                <div className="text-base display-flex justify-center hover:text-[#1b67cc]">
+                <div className="text-base display-flex justify-center">
                   {subRoute.icon}
                 </div>
-                <div className="capitalize flex justify-center text-xs ml-1 hover:text-[#1b67cc]">
+                <div className="capitalize flex justify-center text-xs ml-1">
                   {subRoute.name}
                 </div>
                 </NavLink>

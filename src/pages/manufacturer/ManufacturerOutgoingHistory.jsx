@@ -98,14 +98,17 @@ function ManufacturerOutgoingHistory() {
               onChange={(e) => setFilterParam(e.target.value)}
             /> */}
             <form onSubmit={handleSearchSubmit}>
-              <input
-                placeholder="Search"
-                className="w-52 block m-4 p-4 rounded-lg border-neutral-200 border-2 border-solid"
-                value={filterParam}
-                // onChange={(e) => setFilterParam(e.target.value)}
-                onChange={handleSearchChange}
-              />
-              {/* <Button type="submit">Search</Button> */}
+              <div className="flex m-4">
+                <input
+                  placeholder="Search"
+                  className="w-52 block pl-4 rounded-lg border-neutral-200 border-2 border-solid"
+                  value={filterParam}
+                  onChange={handleSearchChange}
+                  //onChange={(e) => setFilterParam(e.target.value)}
+                >
+                </input>
+                <Button className="m-8" type="submit">Search</Button>
+              </div>
             </form>
           </div>
           <div className=" flex align-baseline m-4">
