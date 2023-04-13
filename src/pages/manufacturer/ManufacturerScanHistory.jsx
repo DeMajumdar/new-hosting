@@ -31,7 +31,7 @@ function ManufacturerScanHistory() {
   console.log(JSON.stringify(data));
 
   const filterData = displayedData.filter((item) =>
-    item.Record.route.includes("Storage")
+    item.Record.actualPath.includes("Manufacturer")
   );
 
   console.log("data:" + filterData);
