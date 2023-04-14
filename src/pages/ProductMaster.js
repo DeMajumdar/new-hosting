@@ -226,9 +226,9 @@ const ProductMaster = () => {
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   Manufacturing Location
                 </th>
-                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                {/* <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   Path History
-                </th>
+                </th> */}
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   MRP
                 </th>
@@ -247,11 +247,11 @@ const ProductMaster = () => {
                     <td class="px-6 py-2">{item.doc.productCategory}</td>
                     <td class="px-6 py-2">{item.doc.manufacturingDate}</td>
                     <td class="px-6 py-2">{item.doc.manufacturingLocation}</td>
-                    <td class="px-6 py-2">{item.doc.route}</td>
+                    {/* <td class="px-6 py-2">{item.doc.route}</td> */}
                     <td class="px-6 py-2">{item.doc.price}</td>
-                    {/* <td class="px-6 py-2">
+                     <td class="px-6 py-2">
                       <QRCode value={item.id} size={100} />
-                    </td> */}
+                    </td> 
                     {/* <td class="px-6 py-2">
                       <Button className="" onClick={QrCodeClick}>
                         {/* <p className="text-2xl">
